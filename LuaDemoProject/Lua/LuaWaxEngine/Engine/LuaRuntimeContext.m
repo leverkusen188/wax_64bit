@@ -1,0 +1,114 @@
+//
+//  LuaRuntimeContext.m
+//  EmbedCocos2dxLua
+//
+//  Created by czh0766 on 14-3-28.
+//
+//
+
+#import "LuaRuntimeContext.h"
+
+#import "lauxlib.h"
+
+#import "wax.h"
+#import "wax_helpers.h"
+
+@implementation LuaRuntimeContext
+
++(id)GetInstance {
+    static id instance;
+    if (!instance) {
+        instance = [[LuaRuntimeContext alloc] init];
+    }
+    return instance;
+}
+
+-(id)init {
+    if (self = [super init]) {
+        _dict = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
+
+-(void)setValue:(id)value forKey:(NSString*)key {
+    [_dict setObject:value forKey:key];
+}
+
+-(id)valueForKey:(NSString *)key {
+    return _dict[key];
+}
+
+-(void)clean {
+    [_dict removeAllObjects];
+}
+
+@end
+
+
+#define METATABLE_NAME "app.Context"
+
+//static int lua_GetRunningView(lua_State *L) {
+//    UIView* view = [LuaRuntimeContext GetInstance].view;
+//    wax_fromInstance(L, view);
+//    return 1;
+//}
+//
+//static int lua_GetResPath(lua_State *L) {
+//    NSString* dir = [LuaRuntimeContext GetInstance].directory;
+//    const char* name = luaL_checkstring(L, 1);
+//    NSString* filepath = [dir stringByAppendingPathComponent:
+//                         [NSString stringWithUTF8String:name]];
+//    
+//    wax_fromInstance(L, filepath);
+//    
+//    return 1;
+//}
+
+static int lua_GetValue(lua_State *L) {
+    const char* ckey = lua_tostring(L, 1);
+    NSString* key = [NSString stringWithUTF8String:ckey];
+    id value = [[LuaRuntimeContext GetInstance] valueForKey:key];
+    wax_fromInstance(L, value);
+    return 1;
+}
+
+static int lua_GetLocalizedString(lua_State *L)
+{
+    const char *ckey = lua_tostring(L, 1);
+    NSString *key = [NSString stringWithUTF8String:ckey];
+    NSString *value = NSLocalizedString(key, nil);
+    wax_fromInstance(L, value);
+    return 1;
+}
+
+
+static int lua_GetGlobalColor(lua_State *L)
+{
+    const int ckey = lua_tointeger(L, 1);
+    UIColor *value = [UIColor whiteColor];
+    wax_fromInstance(L, value);
+    return 1;
+}
+
+static const struct luaL_Reg metaFunctions[] = {
+    {NULL, NULL}
+};
+
+static const struct luaL_Reg functions[] = {
+    {"GetLocalizedString", lua_GetLocalizedString},
+    {"GetValue", lua_GetValue},
+    {"GetGlobalColor",lua_GetGlobalColor},
+    {NULL, NULL}
+};
+
+int luaopen_app_Context(lua_State *L) {
+    BEGIN_STACK_MODIFY(L);
+    
+    luaL_newmetatable(L, METATABLE_NAME);
+    luaL_register(L, NULL, metaFunctions);
+    luaL_register(L, METATABLE_NAME, functions);
+    
+    END_STACK_MODIFY(L, 0)
+    
+    return 1;
+}

@@ -1,0 +1,16 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#endif
+
+#define LUA_PROFILE_ENABLE  0
+
+
+//lua单步调试开关 added by xiaoma
+//#define QQ_LUA_SOCKET_DEBUG
+

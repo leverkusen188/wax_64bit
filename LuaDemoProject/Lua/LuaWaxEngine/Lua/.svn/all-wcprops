@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/basic/basic_iphoneqq_rep/!svn/ver/113511/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua
+END
+lparser.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lparser.c
+END
+lgc.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lgc.h
+END
+lparser.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lparser.h
+END
+lmathlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lmathlib.c
+END
+lualib.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/113511/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lualib.h
+END
+lcode.c
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lcode.c
+END
+ldblib.c
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ldblib.c
+END
+lcode.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lcode.h
+END
+loadlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/loadlib.c
+END
+ldump.c
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ldump.c
+END
+lstrlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/basic/basic_iphoneqq_rep/!svn/ver/107092/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lstrlib.c
+END
+luaconf.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/luaconf.h
+END
+ltable.c
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ltable.c
+END
+lvm.c
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/basic/basic_iphoneqq_rep/!svn/ver/109285/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lvm.c
+END
+ltm.c
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ltm.c
+END
+lstate.c
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lstate.c
+END
+ldebug.c
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ldebug.c
+END
+ltable.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ltable.h
+END
+lbaselib.c
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lbaselib.c
+END
+lvm.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lvm.h
+END
+lmem.c
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lmem.c
+END
+ltm.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ltm.h
+END
+lstate.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lstate.h
+END
+lobject.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lobject.c
+END
+ldebug.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ldebug.h
+END
+print.c
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/print.c
+END
+lauxlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lauxlib.c
+END
+lapi.c
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/basic/basic_iphoneqq_rep/!svn/ver/111319/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lapi.c
+END
+lmem.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lmem.h
+END
+lfunc.c
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lfunc.c
+END
+lobject.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lobject.h
+END
+lauxlib.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lauxlib.h
+END
+lapi.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lapi.h
+END
+liolib.c
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/liolib.c
+END
+llex.c
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/llex.c
+END
+lzio.c
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lzio.c
+END
+lfunc.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lfunc.h
+END
+loslib.c
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/loslib.c
+END
+ldo.c
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ldo.c
+END
+llex.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/llex.h
+END
+lzio.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lzio.h
+END
+lundump.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lundump.c
+END
+lopcodes.c
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lopcodes.c
+END
+ldo.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ldo.h
+END
+linit.c
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/basic/basic_iphoneqq_rep/!svn/ver/113511/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/linit.c
+END
+ltablib.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/ltablib.c
+END
+lstring.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lstring.c
+END
+lua.h
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/basic/basic_iphoneqq_rep/!svn/ver/111319/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lua.h
+END
+lopcodes.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lopcodes.h
+END
+lundump.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lundump.h
+END
+lstring.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lstring.h
+END
+lgc.c
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/lgc.c
+END
+llimits.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/basic/basic_iphoneqq_rep/!svn/ver/92584/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/Lua/llimits.h
+END

@@ -1,0 +1,159 @@
+//
+//  WaxLuaEngine.m
+//  EmbedCocos2dxLua
+//
+//  Created by czh0766 on 14-3-27.
+//
+//
+
+#import "LuaWaxEngine.h"
+
+#import "lua.h"
+#import "lauxlib.h"
+
+#import "wax.h"
+#import "wax_helpers.h"
+#import "LuaGCEngine.h"
+//#import "wax_CGPath.h"
+//#import "wax_CoreAnimation.h"
+
+#import "LuaRuntimeContext.h"
+#import "WaxEngineAnalyse.h"
+
+@implementation LuaWaxSharedEnv
+
++ (instancetype)sharedWaxEnv
+{
+    static LuaWaxSharedEnv *sharedEnv = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedEnv = [[LuaWaxSharedEnv alloc] init];
+    });
+    return sharedEnv;
+}
+
+- (void)stopWax
+{
+    if (self.isWaxStarted) {
+        wax_end();
+        self.isWaxStarted = NO;
+    }
+}
+
+@end
+
+@implementation LuaWaxEngine
+
++ (void)cleanMemory {
+    [[LuaGCEngine GetInstance] cleanMemory];
+}
+
+-(id) initWithScriptFile:(NSString*)filepath {
+    if (self = [super init]) {
+        _filepath = [filepath retain];
+    }
+    return self;
+}
+
+-(void) runInView:(UIView*)view {
+    LuaRuntimeContext* context = [LuaRuntimeContext GetInstance];
+    //context.view = view;
+    [context setValue:view forKey:@"view"];
+    [self run];
+}
+
+-(void) runWithContext:(NSDictionary*)ctx {
+    LuaRuntimeContext* context = [LuaRuntimeContext GetInstance];
+    for (NSString* key in ctx.allKeys) {
+        [context setValue:ctx[key] forKey:key];
+    }
+    [self run];
+}
+
+-(void) runFile:(NSString*)filepath WithContext:(NSDictionary*)ctx
+{
+    if(filepath != _filepath && filepath)
+    {
+        [_filepath release];
+        _filepath = [filepath retain];
+    }
+    LuaRuntimeContext* context = [LuaRuntimeContext GetInstance];
+    for (NSString* key in ctx.allKeys) {
+        [context setValue:ctx[key] forKey:key];
+    }
+    [self run];
+}
+
+-(void) run {
+    [WaxEngineAnalyse GetInstance].luaFilePath  = _filepath; //初始化分析的lua脚本名称
+    [[WaxEngineAnalyse GetInstance]startPrepareForUserScript];
+    if (_filepath.length == 0) {
+        QQ_ERROR("lwaxEngine: filePath is empty!");
+        [[WaxEngineAnalyse GetInstance]errorOccured:WaxErrorCode_UserLuaNotFound errMsg:nil];
+        return;
+    }
+    if([LuaWaxSharedEnv sharedWaxEnv].isWaxStarted)
+    {
+        NSString* dir = [_filepath stringByDeletingLastPathComponent];
+        wax_addSearchPath((char*)[dir UTF8String]);
+        wax_executeScriptFile((char*)[_filepath UTF8String]);
+        return;
+    }
+    
+    if (self.stdlibPath.length == 0) {
+        QQ_ERROR("lwaxEngine: stdlibPath is empty!");
+        [[WaxEngineAnalyse GetInstance]errorOccured:WaxErrorCode_StdLuaNotFound errMsg:nil];
+        return;
+    }
+    
+    NSString* script_name = [_filepath lastPathComponent];
+    NSString* dir = [_filepath stringByDeletingLastPathComponent];
+    
+    LuaRuntimeContext* context = [LuaRuntimeContext GetInstance];
+    [context setValue:dir forKey:@"dir"];
+    
+    NSString *pp = [NSString stringWithFormat:@"%@/?.lua;%@/?/init.lua;%@/?.luac;", dir, dir, dir];
+    setenv(LUA_PATH, [pp UTF8String], 1);
+    
+    if ([LuaWaxSharedEnv sharedWaxEnv].isWaxStarted) {
+        wax_addSearchPath((char*)[dir UTF8String]);
+        if (![_filepath hasSuffix:@".lua"]) {
+            wax_runScript([_filepath UTF8String]);
+        } else {
+            wax_runScript([script_name UTF8String]);
+        }
+    } else {
+        
+        [LuaWaxSharedEnv sharedWaxEnv].isWaxStarted = YES;
+        
+        //预编译之后的插件
+        if (![_filepath hasSuffix:@".lua"]) {
+            //wax_start 里面先去载入标准库，然后再执行脚本
+            wax_start((char *)[_filepath UTF8String], [self.stdlibPath UTF8String], luaopen_app_Context, luaopen_luagc, nil);
+        } else {
+            wax_start((char*)[script_name UTF8String], [self.stdlibPath  UTF8String], luaopen_app_Context, luaopen_luagc, nil);
+        }
+    }
+}
+
+-(void)destroy {
+    LuaRuntimeContext* context = [LuaRuntimeContext GetInstance];
+    [context clean];
+}
+
+-(void)destroyAfterMoment {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self destroy];
+    });
+}
+
+-(void)dealloc {
+    [_filepath release];
+    [super dealloc];
+}
+
+@end
+
+
+
+

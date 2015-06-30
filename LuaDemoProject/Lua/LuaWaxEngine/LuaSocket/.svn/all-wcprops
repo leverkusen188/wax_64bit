@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/basic/basic_iphoneqq_rep/!svn/ver/113949/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/LuaSocket
+END
+lualoadexts.c
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/basic/basic_iphoneqq_rep/!svn/ver/113949/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/LuaSocket/lualoadexts.c
+END
+lualoadexts.h
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/basic/basic_iphoneqq_rep/!svn/ver/113949/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/LuaSocket/lualoadexts.h
+END
+socket.lua
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/basic/basic_iphoneqq_rep/!svn/ver/113949/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/LuaSocket/socket.lua
+END
+mobdebug.lua
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/basic/basic_iphoneqq_rep/!svn/ver/113949/iphoneqq_proj/trunk/master/Classes/module/LuaWaxEngine/LuaWaxEngine/LuaSocket/mobdebug.lua
+END

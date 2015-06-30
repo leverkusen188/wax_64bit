@@ -1,0 +1,93 @@
+//
+//  LuaGCEngine.m
+//  WaxTest
+//
+//  Created by chaodong on 14-8-12.
+//  Copyright (c) 2014年 bos. All rights reserved.
+//
+
+#import "LuaGCEngine.h"
+#import "LuaWaxEngine.h"
+
+#import "lua.h"
+#import "lauxlib.h"
+
+#import "wax.h"
+#import "wax_helpers.h"
+#import "wax_gc.h"
+
+@implementation LuaGCEngine
+
+- (void)cleanMemory {
+    if ([LuaWaxSharedEnv sharedWaxEnv].isWaxStarted)
+    {
+        NSTimeInterval startTime = [[NSDate date] timeIntervalSince1970];
+        [self cleanupStrongSelfVarsUserdataTable];
+        lua_State *L = wax_currentLuaState();
+        BEGIN_STACK_MODIFY(L)
+        [wax_gc cleanupUnusedObject];
+        lua_gc(L, LUA_GCCOLLECT, 0);
+        [wax_gc cleanupUnusedObject];
+        lua_gc(L, LUA_GCCOLLECT, 0);
+        [wax_gc cleanupUnusedObject];
+        lua_gc(L, LUA_GCCOLLECT, 0);
+        END_STACK_MODIFY(L, 0);
+    }
+}
+
+- (void)cleanupStrongSelfVarsUserdataTable {
+    lua_State *L = wax_currentLuaState();
+    BEGIN_STACK_MODIFY(L)
+    wax_instance_pushStrongSelfVarsTable(L);
+    lua_pushnil(L);  // first key
+    while (lua_next(L, -2)) {
+        lua_pop(L, 1); // pops the value, keeps the key
+        lua_pushvalue(L, -1);
+        lua_pushnil(L);
+        lua_rawset(L, -4); // Clear it!
+    }
+    END_STACK_MODIFY(L, 0);
+}
+
++(id)GetInstance {
+    static LuaGCEngine *_sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[LuaGCEngine alloc] init];
+    });
+    
+    return _sharedInstance;
+}
+@end
+
+#define METATABLE_NAME "luagc"
+
+static int lua_CleanMemory(lua_State *L) {
+    BEGIN_STACK_MODIFY(L)
+    lua_gc(L, LUA_GCCOLLECT, 0);
+    //lua_gc(L, LUA_GCSTOP, 0);
+    END_STACK_MODIFY(L, 0);
+
+    return 1;
+}
+
+static const struct luaL_Reg metaFunctions[] = {
+    {NULL, NULL}
+};
+
+static const struct luaL_Reg functions[] = {
+    {"cleanMemory", lua_CleanMemory},
+    {NULL, NULL}
+};
+
+int luaopen_luagc(lua_State *L) {
+    BEGIN_STACK_MODIFY(L);
+    
+    luaL_newmetatable(L, METATABLE_NAME);
+    luaL_register(L, NULL, metaFunctions);
+    luaL_register(L, METATABLE_NAME, functions);
+    
+    END_STACK_MODIFY(L, 0)
+    
+    return 1;
+}
